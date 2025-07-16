@@ -1,0 +1,26 @@
+{
+    "raed": {
+        "age": 12,
+        "birth year": 2013,
+        "password": "nour",
+        "Allergies": null
+    },
+    "mohammed": {
+        "age": 17,
+        "birth year": 2008,
+        "password": "nour",
+        "Allergies": "Nuts"
+    },
+    "nour": {
+        "age": 23,
+        "birth year": 2002,
+        "password": "l",
+        "Allergies": null
+    },
+    "n": {
+        "age": 21,
+        "birth year": 2004,
+        "password": "n",
+        "Allergies": "chocholate, nuts, dairy"
+    }
+}

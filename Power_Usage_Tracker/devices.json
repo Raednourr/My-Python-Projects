@@ -1,0 +1,19 @@
+{
+    "raed": {
+        "rate_per_kwh": 0.2,
+        "devices": {
+            "fan": {
+                "wattage": "12",
+                "time_used": "2"
+            },
+            "pc": {
+                "wattage": "15",
+                "time_used": "3"
+            }
+        }
+    },
+    "sd": {
+        "rate_per_kwh": 0.5,
+        "devices": {}
+    }
+}

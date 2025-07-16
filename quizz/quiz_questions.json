@@ -1,0 +1,52 @@
+[
+    {
+        "question": "What is the capital of France?",
+        "options": [
+            "Paris",
+            "London",
+            "Berlin",
+            "Rome"
+        ],
+        "answer": "Paris"
+    },
+    {
+        "question": "What is 5 + 7?",
+        "options": [
+            "10",
+            "12",
+            "14",
+            "15"
+        ],
+        "answer": "12"
+    },
+    {
+        "question": "Which planet is known as the Red Planet?",
+        "options": [
+            "Earth",
+            "Mars",
+            "Venus",
+            "Jupiter"
+        ],
+        "answer": "Mars"
+    },
+    {
+        "question": "Who wrote 'One Piece'?",
+        "options": [
+            "Masashi Kishimoto",
+            "Eiichiro Oda",
+            "Tite Kubo",
+            "Akira Toriyama"
+        ],
+        "answer": "Eiichiro Oda"
+    },
+    {
+        "question": "Which language is this quiz app written in?",
+        "options": [
+            "Python",
+            "JavaScript",
+            "C++",
+            "HTML"
+        ],
+        "answer": "Python"
+    }
+]
