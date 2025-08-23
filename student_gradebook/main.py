@@ -5,7 +5,7 @@ from auth import login
 
 logged = login()
 
-data_file = "projects/student_gradebook/data.json"
+data_file = "projects/student_gradebook/grades.json"
 security_file = "projects/student_gradebook/security.json"
 menu = """
 📚 Student Gradebook Menu
