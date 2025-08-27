@@ -32,7 +32,7 @@ Data is stored in **JSON files**.
 ---
 
 ## 📇 Contacts Book
-Currently supports adding new contacts, organized by the first letter of the name.  
+Currently supports adding new contacts, organized by the first letter of the name, and deleting contacts by the name.  
 Data is stored in **JSON files** for easy management.
 
 ---
