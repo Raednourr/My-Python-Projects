@@ -13,8 +13,8 @@ menu = """
 6. Exit
 """
 
-contacts_file = "projects/contacts_book/contacts.json"
-letters_file = "projects/contacts_book/letters_in_use.json"
+contacts_file = "contacts_book/contacts.json"
+letters_file = "contacts_book/letters_in_use.json"
 
 
 def add_contact():
@@ -48,6 +48,25 @@ def add_contact():
         json.dump(letters, f, indent=4)
     time.sleep(0.35)
     print("Added Contact Succesfully!")
+
+def delete_contact():
+    with open(contacts_file, "r") as f:
+        contacts = json.load(f)
+
+    contact_needed = input("Enter Contact name: ").strip().lower()
+
+    if contact_needed[0] in contacts:
+        contacts[contact_needed[0]] = [
+            d for d in contacts[contact_needed[0]]
+            if contact_needed not in d.keys()   # ✅ check key only
+        ]
+    
+    with open(contacts_file, "w") as f:
+        json.dump(contacts, f, indent=4)
+
+
+    print("Deleted contact succesfully!")
+    time.sleep(0.35)
 
 while True:
     print(menu)
