@@ -54,10 +54,10 @@ def delete_contact():
         contacts = json.load(f)
 
     contact_needed = input("Enter Contact name: ").strip().lower()
-
+        
     if contact_needed[0] in contacts:
         contacts[contact_needed[0]] = [
-            d for d in contacts[contact_needed[0]]
+            d for d in contacts[contact_needed[0].lower()]
             if contact_needed not in d.keys()   # ✅ check key only
         ]
     
@@ -67,6 +67,13 @@ def delete_contact():
 
     print("Deleted contact succesfully!")
     time.sleep(0.35)
+
+
+def view_contacts():
+    with open(contacts_file, "r") as f:
+        contacts = json.load(f)
+    
+    print(json.dumps(contacts, indent=4))
 
 while True:
     print(menu)
@@ -81,8 +88,10 @@ while True:
         add_contact()
         time.sleep(1)
     elif choice == "2":
+        delete_contact()
         time.sleep(1)
     elif choice == "3":
+        view_contacts()
         time.sleep(1)
     elif choice == "4":
         time.sleep(1)

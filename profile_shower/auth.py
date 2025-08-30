@@ -69,10 +69,11 @@ def authenticate():
     choice = input("LogIn (l) or Register (r): ").strip().lower()
 
     if choice == "l":
-        return log_in()
+        log_in()
+        # return log_in()
     elif choice == "r":
-        return register()
-
+        #return register()
+        register()
     else:
         print("Not an option! Try again.")
 
