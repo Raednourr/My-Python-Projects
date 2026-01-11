@@ -2,7 +2,7 @@ import json
 import os
 import time
 
-security_file = "projects/student_gradebook/security.json"
+security_file = "student_gradebook/security.json"
 
 def login():
     if os.path.exists(security_file) and os.path.getsize(security_file) > 0:
@@ -17,7 +17,7 @@ def login():
 
     for attempt in range(3):
         password = input("Enter authentication password: ").strip().lower()
-        if password == security["password"].lower():
+        if password == security.get("password"):
             print("Entering Gradebook...")
             return True
         else:

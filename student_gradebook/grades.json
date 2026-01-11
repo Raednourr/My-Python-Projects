@@ -1,21 +1,12 @@
 {
     "Raed Nour": {
         "Eng": 99,
-        "Arabic": 98,
-        "Math": 99,
-        "Science": 98,
-        "SS": 99,
-        "Religion": 100,
-        "Average Grade": 98.83
-    },
-    "l l": {
-        "Eng": 99,
         "Arabic": 99,
         "Math": 99,
         "Science": 99,
         "SS": 99,
-        "Religion": 99,
-        "Average Grade": 99.0
+        "Religion": 100,
+        "Average Grade": 99.17
     },
     "Mohammed Nour": {
         "English": 97,

@@ -5,8 +5,8 @@ from auth import login
 
 logged = login()
 
-data_file = "projects/student_gradebook/grades.json"
-security_file = "projects/student_gradebook/security.json"
+data_file = "student_gradebook/grades.json"
+security_file = "student_gradebook/security.json"
 menu = """
 📚 Student Gradebook Menu
 ────────────────────────────
@@ -56,13 +56,16 @@ class Gradebook:
         with open(data_file, "w") as f:
             json.dump(students, f, indent=4)
 
-
+    
     def check_student(self):
         with open(data_file, "r") as f:
             students = json.load(f)
         if os.path.getsize(data_file) == 0:
             print("Gradebook is empty.")
             return
+        
+        with open(security_file, "r") as f:
+            passwords = json.load(f)
 
         student_name = input("Enter full name of student: ").strip()
         if student_name in students:
@@ -77,7 +80,7 @@ class Gradebook:
                 print("VERIFICATION")
                 print("")
                 verif = input("Enter verification code: ").strip()
-                if verif == security_file["verification"]:
+                if verif == passwords["verification"]:
                     print("Correct, able to change grades now.")
                     time.sleep(1)
                     for subject, grade in students[student_name].items():
@@ -115,7 +118,7 @@ class Gradebook:
                 for subject, grade in students[student_name].items():
                     print(f"{subject}: {grade}")
 
-                time.sleep(5)
+                time.sleep(3)
                 close = input("Close? (y, n): ")
                 if close == "y":
                     print("Closing...")
@@ -134,6 +137,33 @@ class Gradebook:
         with open(data_file, "w") as f:
             json.dump(students, f, indent=4)
 
+    def rank_student(self):
+        with open(data_file, "r") as f:
+            students = json.load(f)
+        if os.path.getsize(data_file) == 0:
+            print("Gradebook is empty.")
+            return
+        
+        
+    def delete_student(self):
+        with open(data_file, "r") as f:
+            students = json.load(f)
+        if os.path.getsize(data_file) == 0:
+            print("Gradebook is empty.")
+            return
+        
+        name = input("Enter full name of student: ").strip()
+        if name in students:
+            del students[name]
+            print(f"Student '{name}' deleted successfully.")
+ 
+        else:
+            print("Student not found.")
+            return None
+
+        with open(data_file, "w") as f:
+            json.dump(students, f, indent=4)
+
 
 def app_functionality():
     gradebook = Gradebook()
@@ -144,16 +174,22 @@ def app_functionality():
             print("Exiting...")
             time.sleep(0.3)
             break
+
         elif choice == "1":
             gradebook.add_student()
             time.sleep(1.5)
+
         elif choice == "2":
             gradebook.check_student()
             time.sleep(1.5)
+
         elif choice == "3":
             print("Feature coming soon!")
+            time.sleep(1.5)
+
         elif choice == "4":
-            print("Feature coming soon!")
+            gradebook.delete_student()
+            time.sleep(1.5)
 
         else:
             print("Invalid choice.")
